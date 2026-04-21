@@ -10,10 +10,12 @@
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         .card { transition: all 0.3s ease; }
         .card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.15) !important; }
+        .navbar { background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,249,250,0.95) 100%) !important; }
+        [data-bs-theme="dark"] .navbar { background: linear-gradient(135deg, rgba(33,37,41,0.95) 0%, rgba(52,58,64,0.95) 100%) !important; }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top shadow-sm" style="background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,249,250,0.95) 100%) !important;">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold" href="../index.html">João Gherardi</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
