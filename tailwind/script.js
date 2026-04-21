@@ -24,14 +24,12 @@ tailwind.config = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    const themeToggle = document.getElementById('themeToggle');
+    const themeToggles = document.querySelectorAll('.theme-toggle');
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
     const html = document.documentElement;
 
-    if (!themeToggle) {
-        return;
-    }
-
-    themeToggle.addEventListener('click', () => {
+    const toggleTheme = () => {
         if (html.classList.contains('dark')) {
             html.classList.remove('dark');
             html.classList.add('light');
@@ -39,5 +37,31 @@ document.addEventListener('DOMContentLoaded', () => {
             html.classList.remove('light');
             html.classList.add('dark');
         }
+    };
+
+    themeToggles.forEach((button) => {
+        button.addEventListener('click', toggleTheme);
     });
+
+    if (mobileMenuToggle && mobileMenu) {
+        mobileMenuToggle.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenuToggle.setAttribute('aria-expanded', 'true');
+            } else {
+                mobileMenu.classList.add('hidden');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach((link) => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
 });
