@@ -5,21 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>João Gherardi - Portfolio Bootstrap</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .card { transition: all 0.3s ease; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.15) !important; }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top shadow-sm" style="background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,249,250,0.95) 100%) !important;">
         <div class="container">
-            <a class="navbar-brand" href="../index.html">João Gherardi</a>
+            <a class="navbar-brand fw-bold" href="../index.html">João Gherardi</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
                 <ul class="navbar-nav align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experiencia">Experiência</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link fw-500" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link fw-500" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link fw-500" href="#experiencia">Experiência</a></li>
+                    <li class="nav-item"><a class="nav-link fw-500" href="#projetos">Projetos</a></li>
                     <li class="nav-item">
-                        <button id="themeToggle" class="btn btn-outline-secondary btn-sm ms-3">Trocar Tema</button>
+                        <button id="themeToggle" class="btn btn-outline-secondary btn-sm ms-3">🌙</button>
                     </li>
                 </ul>
             </div>
@@ -28,61 +35,99 @@
 
     <div class="container mt-5">
         <header class="text-center mb-5">
-            <h1 class="display-4">JOÃO GHERARDI</h1>
-            <p class="lead">Lavras - MG | (35) 984382049 | gherardijoao@gmail.com</p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="https://www.linkedin.com/in/joao-amancio-gherardi-2004j" class="btn btn-primary" target="_blank">LinkedIn</a>
-                <a href="https://github.com/gherardijoa" class="btn btn-dark" target="_blank">GitHub</a>
-                <a href="https://gherardi-joao.vercel.app/" class="btn btn-info text-white" target="_blank">Portfolio</a>
+            <h1 class="display-4 fw-bold mb-3">JOÃO GHERARDI</h1>
+            <p class="lead text-muted mb-4">Desenvolvedor Full Stack | Lavras - MG</p>
+            <p class="fs-6 text-muted mb-5">(35) 984382049 | gherardijoao@gmail.com</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="https://www.linkedin.com/in/joao-amancio-gherardi-2004j" class="btn btn-primary rounded-pill px-4 py-2" target="_blank">LinkedIn</a>
+                <a href="https://github.com/gherardijoao" class="btn btn-dark rounded-pill px-4 py-2" target="_blank">GitHub</a>
+                <a href="https://gherardi-joao.vercel.app/" class="btn btn-info text-white rounded-pill px-4 py-2" target="_blank">Portfolio</a>
             </div>
         </header>
 
         <section id="sobre" class="mb-5">
-            <h2>Sobre Mim</h2>
-            <hr>
-            <p><strong>Objetivo:</strong> Oportunidade em Desenvolvimento de Software</p>
-            <p>Estou em busca de uma oportunidade em desenvolvimento de software. Atualmente no sexto período de Sistemas de Informação (UFLA). Possuo conhecimentos em Javascript, Typescript, React.js, Angular, HTML5, CSS3, UI/UX, Jest e Figma para o Frontend. Node.js, Express.js, Java, Spring Boot, JWT, Docker e C++ para o Backend, além de conhecimentos em SQL (PostgreSQL, MySQL).</p>
+            <h2 class="fs-3 fw-bold mb-4 text-primary">Sobre Mim</h2>
+            <p class="lead lh-lg">Desenvolvedor apaixonado por criar soluções digitais. Atualmente no sexto período de Sistemas de Informação (UFLA), com experiência prática em desenvolvimento full-stack. Especializado em criar interfaces modernas e APIs robustas, com foco em qualidade, performance e experiência do usuário.</p>
+        </section>
+
+        <section id="skills" class="mb-5">
+            <h2 class="fs-3 fw-bold mb-4 text-primary">Habilidades Técnicas</h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <h6 class="card-title fw-bold mb-3 text-info">Frontend</h6>
+                            <p class="card-text small">JavaScript, TypeScript, React.js, Angular, HTML5, CSS3, UI/UX, Jest, Figma, Framer Motion, Bootstrap, Tailwind CSS</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <h6 class="card-title fw-bold mb-3 text-info">Backend</h6>
+                            <p class="card-text small">Node.js, Express.js, NestJS, Java, Spring Boot, JWT, Docker, C++, SQL (PostgreSQL, MySQL), Elasticsearch</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="formacao" class="mb-5">
+            <h2 class="fs-3 fw-bold mb-4 text-primary">Formação Acadêmica</h2>
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Sistemas de Informação – UFLA</h5>
+                    <h6 class="card-subtitle mb-3 text-body-secondary" style="font-size: 0.9rem;">Sexto Período (6/8)</h6>
+                    <p class="card-text">Disciplinas cursadas: Programação Orientada a Objetos (Java), Engenharia de Software, Estruturas de Dados e Algoritmos (C++), Sistemas Gerenciadores de Banco de Dados (MySQL). Formação voltada para desenvolvimento de sistemas, fundamentos da computação e gestão de dados.</p>
+                </div>
+            </div>
         </section>
 
         <section id="experiencia" class="mb-5">
-            <h2>Experiência Profissional</h2>
-            <hr>
-            <div class="card mb-3">
+            <h2 class="fs-3 fw-bold mb-4 text-primary">Experiência Profissional</h2>
+            <div class="card border-0 shadow-sm mb-3">
                 <div class="card-body">
-                    <h5 class="card-title">Levty – Software Engineer Trainee</h5>
-                    <h6 class="card-subtitle mb-2 text-body-secondary">Dezembro 2025 – Presente</h6>
-                    <p class="card-text">Utilizo JavaScript para tarefas de desenvolvimento e scripts de automação. Integração de APIs RESTful, consultas no Elasticsearch e desenvolvimento frontend com React.</p>
+                    <h5 class="card-title fw-bold mb-2">Levty – Software Engineer Trainee</h5>
+                    <h6 class="card-subtitle mb-3 text-body-secondary" style="font-size: 0.85rem;">Dezembro 2025 – Presente</h6>
+                    <p class="card-text">Desenvolvimento com JavaScript, automação de scripts, integração de APIs RESTful com Elasticsearch, e desenvolvimento frontend com React em arquitetura de microsserviços.</p>
                 </div>
             </div>
-            <!-- More experiences... -->
-            <div class="card mb-3">
+            <div class="card border-0 shadow-sm mb-3">
                 <div class="card-body">
-                    <h5 class="card-title">Agência Zetta - Desenvolvedor Fullstack Bolsista</h5>
-                    <h6 class="card-subtitle mb-2 text-body-secondary">Agosto 2025 - Dezembro 2025</h6>
-                    <p class="card-text">Desenvolvimento web com Angular (frontend) e Java/Spring Boot (backend) para sistemas corporativos e landing pages.</p>
+                    <h5 class="card-title fw-bold mb-2">Agência Zetta - Desenvolvedor Fullstack Bolsista</h5>
+                    <h6 class="card-subtitle mb-3 text-body-secondary" style="font-size: 0.85rem;">Agosto 2025 - Dezembro 2025</h6>
+                    <p class="card-text">Desenvolvimento full-stack para sistemas corporativos e landing pages responsivas. Frontend com Angular seguindo padrões de componentização, backend com Java/Spring Boot.</p>
+                </div>
+            </div>
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold mb-2">Emakers Jr - Desenvolvedor Frontend</h5>
+                    <h6 class="card-subtitle mb-3 text-body-secondary" style="font-size: 0.85rem;">Dezembro 2024 - Dezembro 2025</h6>
+                    <p class="card-text">Desenvolvimento de interfaces responsivas e dinâmicas com React.js, HTML5, CSS3 e Framer Motion. Implementação de componentes interativos, gerenciamento de estado e navegação SPA.</p>
                 </div>
             </div>
         </section>
 
         <section id="projetos" class="mb-5">
-            <h2>Projetos Relevantes</h2>
-            <hr>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
+            <h2 class="fs-3 fw-bold mb-4 text-primary">Projetos Relevantes</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm h-100 overflow-hidden">
                         <div class="card-body">
-                            <h5 class="card-title">Taskly</h5>
-                            <p class="card-text">Sistema full-stack para gerenciamento de tarefas com React, TS, Node, e PostgreSQL.</p>
-                            <a href="https://github.com/gherardijoao/Taskly_" class="btn btn-primary btn-sm" target="_blank">Ver no GitHub</a>
+                            <h5 class="card-title fw-bold mb-2">Taskly</h5>
+                            <p class="card-text small mb-3">Sistema full-stack completo para gerenciamento de tarefas com foco em produtividade e UX. Integração com Google Gemini API para "Consultor de Tarefas com IA".</p>
+                            <small class="text-muted d-block mb-3">React • TypeScript • Node.js • Express • PostgreSQL • Docker</small>
+                            <a href="https://github.com/gherardijoao/Taskly_" class="btn btn-primary btn-sm" target="_blank">Ver no GitHub →</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm h-100 overflow-hidden">
                         <div class="card-body">
-                            <h5 class="card-title">TheGreatRead</h5>
-                            <p class="card-text">Plataforma literária feita com React, integrado à Google Books API.</p>
-                            <a href="https://github.com/gherardijoao/TheGreatRead" class="btn btn-primary btn-sm" target="_blank">Ver no GitHub</a>
+                            <h5 class="card-title fw-bold mb-2">TheGreatRead</h5>
+                            <p class="card-text small mb-3">Plataforma literária para exploração e organização de livros clássicos. Busca avançada integrada à Google Books API com estante virtual e localStorage.</p>
+                            <small class="text-muted d-block mb-3">React • TypeScript • Bootstrap 5 • Google Books API</small>
+                            <a href="https://github.com/gherardijoao/TheGreatRead" class="btn btn-primary btn-sm" target="_blank">Ver no GitHub →</a>
                         </div>
                     </div>
                 </div>

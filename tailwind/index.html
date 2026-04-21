@@ -12,6 +12,20 @@
                 extend: {
                     colors: {
                         primary: '#0ea5e9'
+                    },
+                    animation: {
+                        'fade-in-down': 'fadeInDown 0.6s ease-out',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out'
+                    },
+                    keyframes: {
+                        fadeInDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
                     }
                 }
             }
@@ -20,7 +34,7 @@
 </head>
 <body class="bg-gray-50 text-gray-900 transition-colors duration-300 dark:bg-gray-900 dark:text-gray-100">
 
-    <nav class="bg-white shadow dark:bg-gray-800">
+    <nav class="bg-white shadow dark:bg-gray-800 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex">
@@ -30,18 +44,20 @@
                 </div>
                 <div class="flex items-center space-x-4">
                     <a href="#sobre" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sobre</a>
+                    <a href="#skills" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Skills</a>
                     <a href="#experiencia" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Experiência</a>
                     <a href="#projetos" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projetos</a>
-                    <button id="themeToggle" class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-md text-sm font-medium hover:bg-gray-300 dark:hover:bg-gray-600 transition">Trocar Tema</button>
+                    <button id="themeToggle" class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-md text-sm font-medium hover:bg-gray-300 dark:hover:bg-gray-600 transition">🌙</button>
                 </div>
             </div>
         </div>
     </nav>
 
     <main class="max-w-4xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
-        <header class="text-center mb-12">
+        <header class="text-center mb-12 animate-fade-in-down">
             <h1 class="text-5xl font-extrabold tracking-tight mb-2">JOÃO GHERARDI</h1>
-            <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">Lavras - MG | (35) 984382049 | gherardijoao@gmail.com</p>
+            <p class="text-lg text-gray-600 dark:text-gray-400 mb-4">Desenvolvedor Full Stack | Lavras - MG</p>
+            <p class="text-sm text-gray-500 dark:text-gray-500 mb-6">(35) 984382049 | gherardijoao@gmail.com</p>
             <div class="flex justify-center space-x-4">
                 <a href="https://www.linkedin.com/in/joao-amancio-gherardi-2004j" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition">LinkedIn</a>
                 <a href="https://github.com/gherardijoa" target="_blank" class="bg-gray-800 text-white px-4 py-2 rounded-lg font-medium hover:bg-gray-900 transition dark:bg-gray-700 dark:hover:bg-gray-600">GitHub</a>
@@ -49,39 +65,71 @@
             </div>
         </header>
 
-        <section id="sobre" class="mb-12">
-            <h2 class="text-2xl font-bold mb-4 border-b-2 border-gray-200 dark:border-gray-700 pb-2">Sobre Mim</h2>
-            <p class="mb-3"><strong>Objetivo:</strong> Oportunidade em Desenvolvimento de Software</p>
-            <p class="leading-relaxed">Estou em busca de uma oportunidade em desenvolvimento de software. Atualmente no sexto período de Sistemas de Informação (UFLA). Possuo conhecimentos em Javascript, Typescript, React.js, Angular, HTML5, CSS3, UI/UX, Jest e Figma para o Frontend. Node.js, Express.js, Java, Spring Boot, JWT, Docker e C++ para o Backend, além de conhecimentos em SQL (PostgreSQL, MySQL).</p>
+        <section id="sobre" class="mb-12 animate-fade-in-up">
+            <h2 class="text-3xl font-bold mb-4 text-blue-600 dark:text-blue-400">Sobre Mim</h2>
+            <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">Desenvolvedor apaixonado por criar soluções digitais. Atualmente no sexto período de Sistemas de Informação (UFLA), com experiência prática em desenvolvimento full-stack. Especializado em criar interfaces modernas e APIs robustas, com foco em qualidade, performance e experiência do usuário.</p>
         </section>
 
-        <section id="experiencia" class="mb-12">
-            <h2 class="text-2xl font-bold mb-4 border-b-2 border-gray-200 dark:border-gray-700 pb-2">Experiência Profissional</h2>
-            <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6 mb-6">
-                <h3 class="text-xl font-semibold mb-1">Levty – Software Engineer Trainee</h3>
-                <h4 class="text-sm text-gray-500 mb-4">Dezembro 2025 – Presente</h4>
-                <p>Utilizo JavaScript para tarefas de desenvolvimento e scripts de automação. Integração de APIs RESTful, consultas no Elasticsearch e desenvolvimento frontend com React.</p>
-            </div>
-            <!-- More experiences... -->
-            <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6">
-                <h3 class="text-xl font-semibold mb-1">Agência Zetta - Desenvolvedor Fullstack Bolsista</h3>
-                <h4 class="text-sm text-gray-500 mb-4">Agosto 2025 - Dezembro 2025</h4>
-                <p>Desenvolvimento web com Angular (frontend) e Java/Spring Boot (backend) para sistemas corporativos e landing pages.</p>
-            </div>
-        </section>
-
-        <section id="projetos" class="mb-12">
-            <h2 class="text-2xl font-bold mb-4 border-b-2 border-gray-200 dark:border-gray-700 pb-2">Projetos Relevantes</h2>
+        <section id="skills" class="mb-12 animate-fade-in-up">
+            <h2 class="text-3xl font-bold mb-6 text-blue-600 dark:text-blue-400">Habilidades Técnicas</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6">
-                    <h3 class="text-xl font-semibold mb-2">Taskly</h3>
-                    <p class="mb-4 text-gray-600 dark:text-gray-300">Sistema full-stack para gerenciamento de tarefas com React, TS, Node, e PostgreSQL.</p>
-                    <a href="https://github.com/gherardijoao/Taskly_" target="_blank" class="text-primary hover:underline font-medium">Ver no GitHub &rarr;</a>
+                <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6 hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold mb-4 text-cyan-600 dark:text-cyan-400">Frontend</h3>
+                    <p class="text-gray-700 dark:text-gray-300">JavaScript, TypeScript, React.js, Angular, HTML5, CSS3, UI/UX, Jest, Figma, Framer Motion, Bootstrap, Tailwind CSS</p>
                 </div>
-                <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6">
-                    <h3 class="text-xl font-semibold mb-2">TheGreatRead</h3>
-                    <p class="mb-4 text-gray-600 dark:text-gray-300">Plataforma literária feita com React, integrado à Google Books API.</p>
-                    <a href="https://github.com/gherardijoao/TheGreatRead" target="_blank" class="text-primary hover:underline font-medium">Ver no GitHub &rarr;</a>
+                <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6 hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold mb-4 text-cyan-600 dark:text-cyan-400">Backend</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Node.js, Express.js, NestJS, Java, Spring Boot, JWT, Docker, C++, SQL (PostgreSQL, MySQL), Elasticsearch</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="formacao" class="mb-12 animate-fade-in-up">
+            <h2 class="text-3xl font-bold mb-6 text-blue-600 dark:text-blue-400">Formação Acadêmica</h2>
+            <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <h3 class="text-xl font-semibold mb-2">Sistemas de Informação – UFLA</h3>
+                <h4 class="text-sm text-gray-500 dark:text-gray-400 mb-4">Sexto Período (6/8)</h4>
+                <p class="text-gray-700 dark:text-gray-300">Disciplinas cursadas: Programação Orientada a Objetos (Java), Engenharia de Software, Estruturas de Dados e Algoritmos (C++), Sistemas Gerenciadores de Banco de Dados (MySQL). Formação voltada para desenvolvimento de sistemas, fundamentos da computação e gestão de dados.</p>
+            </div>
+        </section>
+
+        <section id="experiencia" class="mb-12 animate-fade-in-up">
+            <h2 class="text-3xl font-bold mb-6 text-blue-600 dark:text-blue-400">Experiência Profissional</h2>
+            <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6 mb-6 hover:shadow-lg transition-shadow">
+                <h3 class="text-xl font-semibold mb-2">Levty – Software Engineer Trainee</h3>
+                <h4 class="text-sm text-gray-500 dark:text-gray-400 mb-4">Dezembro 2025 – Presente</h4>
+                <p class="text-gray-700 dark:text-gray-300">Desenvolvimento com JavaScript, automação de scripts, integração de APIs RESTful com Elasticsearch, e desenvolvimento frontend com React em arquitetura de microsserviços.</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6 mb-6 hover:shadow-lg transition-shadow">
+                <h3 class="text-xl font-semibold mb-2">Agência Zetta - Desenvolvedor Fullstack Bolsista</h3>
+                <h4 class="text-sm text-gray-500 dark:text-gray-400 mb-4">Agosto 2025 - Dezembro 2025</h4>
+                <p class="text-gray-700 dark:text-gray-300">Desenvolvimento full-stack para sistemas corporativos e landing pages responsivas. Frontend com Angular seguindo padrões de componentização, backend com Java/Spring Boot.</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <h3 class="text-xl font-semibold mb-2">Emakers Jr - Desenvolvedor Frontend</h3>
+                <h4 class="text-sm text-gray-500 dark:text-gray-400 mb-4">Dezembro 2024 - Dezembro 2025</h4>
+                <p class="text-gray-700 dark:text-gray-300">Desenvolvimento de interfaces responsivas e dinâmicas com React.js, HTML5, CSS3 e Framer Motion. Implementação de componentes interativos, gerenciamento de estado e navegação SPA.</p>
+            </div>
+        </section>
+
+        <section id="projetos" class="mb-12 animate-fade-in-up">
+            <h2 class="text-3xl font-bold mb-6 text-blue-600 dark:text-blue-400">Projetos Relevantes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden hover:shadow-lg transition-all hover:scale-105 transform duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Taskly</h3>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm mb-4">Sistema full-stack completo para gerenciamento de tarefas com foco em produtividade e UX. Integração com Google Gemini API para "Consultor de Tarefas com IA".</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">React • TypeScript • Node.js • Express • PostgreSQL • Docker</p>
+                        <a href="https://github.com/gherardijoao/Taskly_" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">Ver no GitHub →</a>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden hover:shadow-lg transition-all hover:scale-105 transform duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">TheGreatRead</h3>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm mb-4">Plataforma literária para exploração e organização de livros clássicos. Busca avançada integrada à Google Books API com estante virtual e localStorage.</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">React • TypeScript • Bootstrap 5 • Google Books API</p>
+                        <a href="https://github.com/gherardijoao/TheGreatRead" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">Ver no GitHub →</a>
+                    </div>
                 </div>
             </div>
         </section>
